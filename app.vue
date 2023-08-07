@@ -27,7 +27,7 @@ function handleStartGameClick() {
       </div>
 
       <h2 v-else class="p-5 text-xl font-bold leading-tight text-center">
-        Please enter the two Player mames first!
+        Please enter the two player names first!
       </h2>
     </div>
     <div>
