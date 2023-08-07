@@ -1,5 +1,5 @@
-import { db } from "../../schema/db";
-import { leaderboardScores } from "../../schema/tables";
+import { leaderboardScores } from "@/db/schema";
+import { db } from "@/db/client";
 
 export default defineEventHandler(async () => {
   const records = await db.select().from(leaderboardScores).all();

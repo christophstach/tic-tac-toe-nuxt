@@ -1,5 +1,5 @@
-import { db } from "../../schema/db";
-import { leaderboardScores, NewLeaderboardScore } from "../../schema/tables";
+import { NewLeaderboardScore, leaderboardScores } from "@/db/schema";
+import { db } from "@/db/client";
 
 export default defineEventHandler(async (event) => {
   const newLeaderboardScore = await readBody<NewLeaderboardScore>(event);
