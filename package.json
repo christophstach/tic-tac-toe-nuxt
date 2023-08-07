@@ -1,0 +1,33 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --ext \".ts,.vue\" .",
+    "lint:fix": "eslint --ext \".ts,.vue\" --fix .",
+    "format": "prettier --write .",
+    "db": "drizzle-kit studio",
+    "migration:create": "drizzle-kit generate:sqlite --schema=./schema/tables.ts"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxthq/ui": "^2.7.0",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@types/node": "^18.17.1",
+    "drizzle-kit": "^0.19.12",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "nuxt": "^3.6.5",
+    "prettier": "^3.0.1"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.3.1",
+    "drizzle-orm": "^0.28.0"
+  }
+}

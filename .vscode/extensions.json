@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "vue.vscode-typescript-vue-plugin",
+    "dbaeumer.vscode-eslint",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "esbenp.prettier-vscode",
+    "rvest.vs-code-prettier-eslint"
+  ],
+  "unwantedRecommendations": ["vscode.typescript-language-features"]
+}
