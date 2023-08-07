@@ -14,6 +14,7 @@ const winner = ref(0);
 const currentPlayer = ref(1);
 const saved = ref(false);
 const leaderboardModalOpen = ref(false);
+const currentMove = ref(0);
 
 const state = ref([
   [0, 0, 0],
@@ -36,6 +37,7 @@ function handleShowLeaderboardClick() {
 }
 
 function handleNewGameClick() {
+  currentMove.value = 0;
   winner.value = 0;
   currentPlayer.value = 1;
   saved.value = false;
@@ -86,6 +88,8 @@ function handleCellClick(row: number, col: number) {
   if (hasWon(2)) {
     winner.value = 2;
   }
+
+  currentMove.value++;
 }
 
 function hasWon(player: number) {
@@ -133,7 +137,10 @@ function hasWon(player: number) {
   <div class="flex flex-col justify-center items-center">
     <div class="p-5 text-xl font-bold leading-tight">
       <div v-if="winner === 0">
-        Current Player: {{ getPlayer(currentPlayer) }}
+        <div v-if="currentMove < 9">
+          Current Player: {{ getPlayer(currentPlayer) }}
+        </div>
+        <div v-else>Draw!</div>
       </div>
       <div v-else>Player {{ getPlayer(winner) }} won the game!</div>
     </div>
@@ -221,7 +228,7 @@ function hasWon(player: number) {
         v-if="winner !== 0"
         :disabled="saved"
         @click="handleSaveToLeaderboardClick()"
-        >Save to leader-board</UButton
+        >Save to leaderboard</UButton
       >
     </div>
 
